@@ -19,7 +19,7 @@ import java.util.ArrayList;
 /**
  * Created by nv95 on 18.12.15.
  */
-public class PuzzmosProvider extends MangaProvider {
+public class PuzzmosProvider extends HtmlMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_popular, R.string.sort_updated, R.string.sort_alphabetical};
     protected static final String sortUrls[] = {"views&sorting-type=DESC", "lastUpdate&sorting-type=DESC", "name"};

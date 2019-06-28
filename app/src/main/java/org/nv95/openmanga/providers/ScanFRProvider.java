@@ -23,7 +23,7 @@ import java.util.ArrayList;
  * Created by admin on 19.07.17.
  */
 
-public class ScanFRProvider extends MangaProvider {
+public class ScanFRProvider extends HtmlMangaProvider {
 
     private static final int sorts[] = {R.string.sort_alphabetical, R.string.sort_popular};
     private static final String sortUrls[] = {"name&asc=true", "views&asc=false"};

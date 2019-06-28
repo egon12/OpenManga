@@ -19,7 +19,7 @@ import java.util.ArrayList;
 /**
  * Created by nv95 on 06.10.15.
  */
-public class MangaTownProvider extends MangaProvider {
+public class MangaTownProvider extends HtmlMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_latest, R.string.sort_popular};
     protected static final String sortUrls[] = {"latest", "hot"};

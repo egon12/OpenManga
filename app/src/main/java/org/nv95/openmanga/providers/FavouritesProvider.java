@@ -39,7 +39,7 @@ import static org.nv95.openmanga.feature.manga.domain.MangaInfo.STATUS_UNKNOWN;
 /**
  * Created by nv95 on 03.10.15.
  */
-public class FavouritesProvider extends MangaProvider {
+public class FavouritesProvider extends HtmlMangaProvider {
 
     private static final String TAG = "FavouritesProvider";
 

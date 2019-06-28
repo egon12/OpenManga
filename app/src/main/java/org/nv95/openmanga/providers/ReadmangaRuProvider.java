@@ -21,7 +21,7 @@ import java.util.ArrayList;
  * Created by nv95 on 30.09.15.
  * provider for http://readmanga.me/
  */
-public class ReadmangaRuProvider extends MangaProvider {
+public class ReadmangaRuProvider extends HtmlMangaProvider {
 
     private static final String HOST = "http://readmanga.me/";
 

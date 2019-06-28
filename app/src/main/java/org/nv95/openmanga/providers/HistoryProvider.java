@@ -33,7 +33,7 @@ import static org.nv95.openmanga.feature.manga.domain.MangaInfo.STATUS_UNKNOWN;
 /**
  * Created by nv95 on 05.10.15.
  */
-public class HistoryProvider extends MangaProvider {
+public class HistoryProvider extends HtmlMangaProvider {
 
     private static final String TABLE_NAME = "history";
     private static final int sorts[] = {R.string.sort_latest, R.string.sort_alphabetical};

@@ -25,7 +25,7 @@ import java.util.Random;
 /**
  * Created by nv95 on 21.03.16.
  */
-public class RecommendationsProvider extends MangaProvider {
+public class RecommendationsProvider extends HtmlMangaProvider {
 
     @NonNull
     private static WeakReference<RecommendationsProvider> instanceReference = new WeakReference<>(null);
