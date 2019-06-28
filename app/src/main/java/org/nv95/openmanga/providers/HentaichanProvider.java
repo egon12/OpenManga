@@ -23,6 +23,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * Created by nv95 on 26.09.16.
  */
@@ -251,10 +253,10 @@ public class HentaichanProvider extends AbstractMangaProvider {
                 "yay"
         );
         if (cp == null || TextUtils.isEmpty(cp.getValue("dle_user_id")) || "deleted".equals(cp.getValue("dle_user_id"))) {
-            Log.d("AUTH", "fail");
+            Timber.tag("AUTH").d("fail");
             return false;
         } else {
-            Log.d("AUTH", "OK");
+            Timber.tag("AUTH").d("OK");
             sAuthCookie = cp.toString();
             return true;
         }

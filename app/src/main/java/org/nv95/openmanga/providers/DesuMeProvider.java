@@ -18,6 +18,8 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * Created by nv95 on 07.03.16.
  */
@@ -104,7 +106,7 @@ public class DesuMeProvider extends AbstractMangaProvider {
             }
             return summary;
         } catch (Exception e) {
-            Log.e("MP", e.getMessage());
+            Timber.tag("MP").e(e);
             return null;
         }
     }

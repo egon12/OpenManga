@@ -94,7 +94,6 @@ public class HistoryProvider extends AbstractMangaProvider {
     public MangaList getLast(int maxItems) {
         MangaList list;
         HistoryMangaInfo manga;
-        //noinspection TryFinallyCanBeTryWithResources
         list = new MangaList();
         Cursor cursor = mStorageHelper.getReadableDatabase()
                 .query(TABLE_NAME, new String[]{"id", "name", "subtitle", "summary", "preview", "path", "provider", "rating", "timestamp", "page", "chapter"},
@@ -138,7 +137,6 @@ public class HistoryProvider extends AbstractMangaProvider {
             return null;
         MangaList list;
         HistoryMangaInfo manga;
-        //noinspection TryFinallyCanBeTryWithResources
         list = new MangaList();
         Cursor cursor = mStorageHelper.getReadableDatabase()
                 .query(TABLE_NAME, new String[]{"id", "name", "subtitle", "summary", "preview", "path", "provider", "rating", "timestamp", "page", "chapter"},
@@ -219,7 +217,6 @@ public class HistoryProvider extends AbstractMangaProvider {
             return null;
         MangaList list;
         MangaInfo manga;
-        //noinspection TryFinallyCanBeTryWithResources
         list = new MangaList();
         Cursor cursor = mStorageHelper.getReadableDatabase()
                 .query(TABLE_NAME, new String[]{"id", "name", "subtitle", "summary", "preview", "path", "provider", "rating"},

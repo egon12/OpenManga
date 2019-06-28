@@ -78,7 +78,6 @@ public class FavouritesProvider extends AbstractMangaProvider {
             return list;
         }
         final SQLiteDatabase database = mStorageHelper.getReadableDatabase();
-        //noinspection TryFinallyCanBeTryWithResources
         try {
             Cursor cursor = database.query(TABLE_NAME,
                     new String[]{"id", "name", "subtitle", "summary", "preview", "path", "provider", "rating"},

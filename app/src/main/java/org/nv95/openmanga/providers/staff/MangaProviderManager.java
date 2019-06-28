@@ -23,6 +23,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import timber.log.Timber;
+
 /**
  * Created by nv95 on 30.09.15.
  */
@@ -149,7 +151,7 @@ public class MangaProviderManager {
         for (ProviderSummary o : providers) {
             ids = ids + o.id + "|";
         }
-        Log.d("SORT", ids);
+        Timber.tag("SORT").d(ids);
         mContext.getSharedPreferences("providers", Context.MODE_PRIVATE)
                 .edit()
                 .putString("ordered", ids.substring(0, ids.length() - 1))

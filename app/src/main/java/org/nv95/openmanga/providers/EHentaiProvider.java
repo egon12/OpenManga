@@ -26,6 +26,8 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import timber.log.Timber;
+
 /**
  * Created by nv95 on 30.09.15.
  */
@@ -269,10 +271,10 @@ public class EHentaiProvider extends AbstractMangaProvider {
                 "1"
         );
         if (cp == null || TextUtils.isEmpty(cp.getValue("ipb_pass_hash"))) {
-            Log.d("AUTH", "fail");
+            Timber.tag("AUTH").d("fail");
             return false;
         } else {
-            Log.d("AUTH", "OK");
+            Timber.tag("AUTH").d("OK");
             sAuthCookie = cp.toString();
             return true;
         }
