@@ -15,6 +15,7 @@ import org.nv95.openmanga.lists.MangaList;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by unravel22 on 28.03.17.
@@ -90,7 +91,7 @@ public class TruyenTranhProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             Document document = getPage(readLink);

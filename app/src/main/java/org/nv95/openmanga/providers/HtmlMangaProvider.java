@@ -21,7 +21,6 @@ import java.util.ArrayList;
  */
 public abstract class HtmlMangaProvider implements MangaProvider {
 
-    protected boolean features[];
     private final SharedPreferences mPrefs;
 
     protected final Document getPage(String url) throws IOException {
@@ -56,16 +55,6 @@ public abstract class HtmlMangaProvider implements MangaProvider {
 
     protected final int getIntPreference(@NonNull String key, int defValue) {
         return mPrefs.getInt(key, defValue);
-    }
-
-    @Deprecated
-    public MangaList getList(int page, int sort) throws Exception {
-        return getList(page, sort, 0);
-    }
-
-    @Deprecated
-    public MangaList getList(int page) throws Exception {
-        return getList(page, 0, 0);
     }
 
     //optional content acces methods

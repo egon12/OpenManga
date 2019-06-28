@@ -22,6 +22,7 @@ import org.nv95.openmanga.core.network.NetworkUtils;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -139,7 +140,7 @@ public class EHentaiProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         String s;
         MangaPage page;

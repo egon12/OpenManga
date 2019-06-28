@@ -15,6 +15,7 @@ import org.nv95.openmanga.lists.MangaList;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nv95 on 18.12.15.
@@ -100,7 +101,7 @@ public class PuzzmosProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         String s;
         MangaPage page;

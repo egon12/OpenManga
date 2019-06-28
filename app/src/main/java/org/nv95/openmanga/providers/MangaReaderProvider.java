@@ -15,6 +15,7 @@ import org.nv95.openmanga.lists.MangaList;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nv95 on 14.10.15.
@@ -82,7 +83,7 @@ public class MangaReaderProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             Document document = getPage(readLink);

@@ -18,6 +18,7 @@ import org.nv95.openmanga.utils.AppHelper;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by admin on 19.07.17.
@@ -109,7 +110,7 @@ public class ScanFRProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             Document document = getPage(readLink);

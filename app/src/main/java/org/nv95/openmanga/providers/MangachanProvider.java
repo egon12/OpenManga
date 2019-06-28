@@ -21,6 +21,7 @@ import org.nv95.openmanga.utils.FileLogger;
 import org.nv95.openmanga.core.network.NetworkUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nv95 on 14.12.15.
@@ -110,7 +111,7 @@ public class MangachanProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             Document document = getPage(readLink);

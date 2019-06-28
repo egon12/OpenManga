@@ -25,8 +25,8 @@ import org.nv95.openmanga.utils.FileLogger;
 
 import java.io.IOException;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import static org.nv95.openmanga.feature.manga.domain.MangaInfo.STATUS_UNKNOWN;
 
@@ -176,7 +176,7 @@ public class HistoryProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         return null;
     }
 

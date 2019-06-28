@@ -21,20 +21,14 @@ import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.preference.PreferenceManager;
-import android.text.TextUtils;
 
-import java.io.IOException;
 import java.lang.ref.WeakReference;
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
-import java.util.Map;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import timber.log.Timber;
-
-import static org.nv95.openmanga.feature.manga.domain.MangaInfo.STATUS_UNKNOWN;
 
 /**
  * Created by nv95 on 03.10.15.
@@ -125,7 +119,7 @@ public class FavouritesProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         return null;
     }
 

@@ -156,7 +156,7 @@ public class RecommendationsProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         return null;
     }
 

@@ -19,6 +19,7 @@ import org.nv95.openmanga.utils.FileLogger;
 import org.nv95.openmanga.core.network.NetworkUtils;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nv95 on 11.09.16.
@@ -91,7 +92,7 @@ public class YaoiChanProvider extends MangachanProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             Document document = getPage(readLink);

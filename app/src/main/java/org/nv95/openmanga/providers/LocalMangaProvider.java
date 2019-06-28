@@ -26,6 +26,7 @@ import org.nv95.openmanga.utils.StorageUtils;
 import java.io.File;
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
+import java.util.List;
 
 import static org.nv95.openmanga.utils.MangaStore.TABLE_PAGES;
 
@@ -131,7 +132,7 @@ public class LocalMangaProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> list = new ArrayList<>();
         MangaPage page;
         final String[] data = readLink.split("\n");

@@ -16,6 +16,7 @@ import org.nv95.openmanga.utils.AppHelper;
 
 import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by nv95 on 07.03.16.
@@ -109,7 +110,7 @@ public class DesuMeProvider extends HtmlMangaProvider {
     }
 
     @Override
-    public ArrayList<MangaPage> getPages(String readLink) {
+    public List<MangaPage> getPages(String readLink) {
         ArrayList<MangaPage> pages = new ArrayList<>();
         try {
             JSONObject jo = new JSONObject(getRaw(readLink)).getJSONObject("response");

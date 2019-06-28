@@ -37,6 +37,7 @@ import org.nv95.openmanga.utils.PausableAsyncTask;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Set;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadPoolExecutor;
@@ -290,7 +291,7 @@ public class SaveService extends Service implements NetworkStateListener.OnNetwo
                 final MangaStore store = new MangaStore(SaveService.this);
                 final int mangaId = store.pushManga(mDownload);
                 //собственно, скачивание
-                ArrayList<MangaPage> pages;
+                List<MangaPage> pages;
                 MangaChapter o;
                 MangaPage o1;
                 //all chapters
