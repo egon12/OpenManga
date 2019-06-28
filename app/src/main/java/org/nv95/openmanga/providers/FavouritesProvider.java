@@ -33,7 +33,7 @@ import timber.log.Timber;
 /**
  * Created by nv95 on 03.10.15.
  */
-public class FavouritesProvider extends HtmlMangaProvider {
+public class FavouritesProvider extends AbstractMangaProvider {
 
     private static final String TAG = "FavouritesProvider";
 

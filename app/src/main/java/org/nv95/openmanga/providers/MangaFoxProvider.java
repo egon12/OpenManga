@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by nv95 on 04.02.16.
  */
-public class MangaFoxProvider extends HtmlMangaProvider {
+public class MangaFoxProvider extends AbstractMangaProvider {
 
     private static final int sorts[] = {R.string.sort_alphabetical, R.string.sort_popular, R.string.sort_rating, R.string.sort_updated};
     private static final String sortUrls[] = {"?az", "", "?rating", "?latest"};

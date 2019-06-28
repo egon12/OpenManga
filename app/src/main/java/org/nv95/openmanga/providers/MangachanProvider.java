@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Created by nv95 on 14.12.15.
  */
-public class MangachanProvider extends HtmlMangaProvider {
+public class MangachanProvider extends AbstractMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_latest, R.string.sort_popular, R.string.sort_alphabetical};
     protected static final String sortUrls[] = {"datedesc", "favdesc", "abcasc"};

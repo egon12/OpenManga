@@ -21,7 +21,7 @@ import java.util.List;
  * Created by unravel22 on 28.03.17.
  */
 
-public class TruyenTranhProvider extends HtmlMangaProvider {
+public class TruyenTranhProvider extends AbstractMangaProvider {
 
     private static final int sorts[] = {R.string.sort_alphabetical, R.string.sort_popular, R.string.sort_rating};
     private static final String sortUrls[] = {"name-asc", "view-desc", "votepoint-desc"};

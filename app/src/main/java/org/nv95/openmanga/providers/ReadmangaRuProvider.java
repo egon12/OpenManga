@@ -22,7 +22,7 @@ import java.util.List;
  * Created by nv95 on 30.09.15.
  * provider for http://readmanga.me/
  */
-public class ReadmangaRuProvider extends HtmlMangaProvider {
+public class ReadmangaRuProvider extends AbstractMangaProvider {
 
     private static final String HOST = "http://readmanga.me/";
 

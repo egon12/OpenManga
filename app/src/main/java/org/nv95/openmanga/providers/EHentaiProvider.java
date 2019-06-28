@@ -29,7 +29,7 @@ import java.util.regex.Pattern;
 /**
  * Created by nv95 on 30.09.15.
  */
-public class EHentaiProvider extends HtmlMangaProvider {
+public class EHentaiProvider extends AbstractMangaProvider {
 
     private static final String DEF_COOKIE = "nw=1; uconfig=dm_t; igneous=0";
     private static final int genres[] = {R.string.genre_all, R.string.genre_doujinshi, R.string.genre_manga, R.string.genre_artistcg, R.string.genre_gamecg, R.string.genre_western, R.string.genre_nonh, R.string.genre_imageset, R.string.genre_cosplay, R.string.genre_asianporn, R.string.genre_misc};

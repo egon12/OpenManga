@@ -34,7 +34,7 @@ import static org.nv95.openmanga.utils.MangaStore.TABLE_PAGES;
  * Created by nv95 on 30.09.15.
  */
 @SuppressWarnings("TryFinallyCanBeTryWithResources")
-public class LocalMangaProvider extends HtmlMangaProvider {
+public class LocalMangaProvider extends AbstractMangaProvider {
 
     private static final int sorts[] = {R.string.sort_latest, R.string.sort_alphabetical};
     private static final String sortUrls[] = {"timestamp DESC", "name COLLATE NOCASE"};

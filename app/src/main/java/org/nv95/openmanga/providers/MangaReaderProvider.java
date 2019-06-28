@@ -20,7 +20,7 @@ import java.util.List;
 /**
  * Created by nv95 on 14.10.15.
  */
-public class MangaReaderProvider extends HtmlMangaProvider {
+public class MangaReaderProvider extends AbstractMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_popular};
     protected static final String sortUrls[] = {""};

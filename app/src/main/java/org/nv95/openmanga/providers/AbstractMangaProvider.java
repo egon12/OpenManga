@@ -19,7 +19,7 @@ import java.util.ArrayList;
 /**
  * Created by nv95 on 30.09.15.
  */
-public abstract class HtmlMangaProvider implements MangaProvider {
+public abstract class AbstractMangaProvider implements MangaProvider {
 
     private final SharedPreferences mPrefs;
 
@@ -40,7 +40,7 @@ public abstract class HtmlMangaProvider implements MangaProvider {
         return NetworkUtils.getRaw(url, getAuthCookie());
     }
 
-    public HtmlMangaProvider(Context context) {
+    public AbstractMangaProvider(Context context) {
         mPrefs = context.getSharedPreferences("prov_" + this.getClass().getSimpleName(), Context.MODE_PRIVATE);
     }
 

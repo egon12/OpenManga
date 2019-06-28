@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by nv95 on 07.03.16.
  */
-public class DesuMeProvider extends HtmlMangaProvider {
+public class DesuMeProvider extends AbstractMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_popular, R.string.sort_alphabetical, R.string.sort_updated};
     protected static final String sortUrls[] = {"popular", "name", "updated"};

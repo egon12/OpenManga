@@ -21,7 +21,7 @@ import java.util.List;
 /**
  * Created by nv95 on 30.09.15.
  */
-public class MintMangaProvider extends HtmlMangaProvider {
+public class MintMangaProvider extends AbstractMangaProvider {
 
     protected static final int genres[] = {R.string.genre_all, R.string.genre_art, R.string.genre_bara, R.string.genre_action, R.string.genre_martialarts, R.string.genre_vampires, R.string.genre_harem,
             R.string.genre_genderbender, R.string.genre_hero_fantasy, R.string.genre_detective, R.string.genre_josei,

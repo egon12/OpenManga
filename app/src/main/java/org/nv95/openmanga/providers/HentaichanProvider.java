@@ -27,7 +27,7 @@ import java.util.List;
  * Created by nv95 on 26.09.16.
  */
 
-public class HentaichanProvider extends HtmlMangaProvider {
+public class HentaichanProvider extends AbstractMangaProvider {
 
     protected static final int sorts[] = {R.string.sort_latest, R.string.sort_popular, R.string.sort_rating, R.string.sort_random};
     protected static final String sortUrls[] = {"manga/new", "mostdownloads&sort=manga", "mostfavorites&sort=manga", "manga/random"};
