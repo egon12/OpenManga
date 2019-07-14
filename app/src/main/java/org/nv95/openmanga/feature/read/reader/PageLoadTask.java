@@ -2,6 +2,8 @@ package org.nv95.openmanga.feature.read.reader;
 
 import android.content.Context;
 import android.os.AsyncTask;
+import android.util.Log;
+
 import androidx.annotation.Nullable;
 
 import com.nostra13.universalimageloader.cache.disc.DiskCache;
@@ -14,6 +16,7 @@ import org.nv95.openmanga.providers.staff.MangaProviderManager;
 import org.nv95.openmanga.core.network.NoSSLv3SocketFactory;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
 import java.net.HttpURLConnection;
@@ -78,6 +81,8 @@ public class PageLoadTask extends AsyncTask<Integer,Integer,Object> {
             final int contentLength = connection.getContentLength();
             InputStream is = connection.getInputStream();
 
+            is = changeIfMri(url, is, contentLength);
+
             cache.save(url, is, new IoUtils.CopyListener() {
                 @Override
                 public boolean onBytesCopied(int current, int total) {  //total is incorrect
@@ -97,6 +102,47 @@ public class PageLoadTask extends AsyncTask<Integer,Integer,Object> {
         } catch (Exception e) {
             return e;
         }
+    }
+
+    private InputStream changeIfMri(String url, InputStream is, int size) {
+       if(!url.endsWith(".mri")) {
+           return is;
+       }
+
+       return new InputStream() {
+             int[] header = {
+                     0x52,
+                     0x49,
+                     0x46,
+                     0x46,
+                     (size >> 0) & 255,
+                     (size >> 8) & 255,
+                     (size >> 16) & 255,
+                     (size >> 24) & 255,
+                     0x57,
+                     0x45,
+                     0x42,
+                     0x50,
+                     0x56,
+                     0x50,
+                     0x38
+                   };
+
+             int readUntil = 0;
+
+
+           @Override
+           public int read() throws IOException {
+               readUntil += 1;
+               if (readUntil < 16) {
+                   return header[readUntil -1];
+               }
+               return is.read() ^ 101;
+
+           }
+       };
+
+
     }
 
     @Override
@@ -125,6 +171,7 @@ public class PageLoadTask extends AsyncTask<Integer,Integer,Object> {
 
     @Override
     protected void onPostExecute(Object o) {
+        //Log.d("ketai", o.toString());
         super.onPostExecute(o);
         if (o == null) {
             mPageWrapper.mState = PageWrapper.STATE_QUEUED;
@@ -132,6 +179,7 @@ public class PageLoadTask extends AsyncTask<Integer,Integer,Object> {
                 mListener.onLoadingFail(mPageWrapper, mIsShadow);
             }
         } else if (o instanceof String) {
+            Log.d("ketai", (String) o);
             mPageWrapper.mState = PageWrapper.STATE_LOADED;
             mPageWrapper.mFilename = (String) o;
             if (mListener != null) {

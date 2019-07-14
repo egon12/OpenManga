@@ -152,6 +152,48 @@ public class NetworkUtils {
         }
     }
 
+    @NonNull
+    public static String postRaw(@NonNull String url, @Nullable String cookie, @Nullable String body) throws IOException {
+        BufferedReader reader = null;
+        try {
+            requestLog(url, cookie);
+            HttpURLConnection con = NetCipher.getHttpURLConnection(url);
+            if (con instanceof HttpsURLConnection) {
+                ((HttpsURLConnection) con).setSSLSocketFactory(NoSSLv3SocketFactory.getInstance());
+            }
+            con.setConnectTimeout(15000);
+            con.setRequestMethod("POST");
+            if (!TextUtils.isEmpty(cookie)) {
+                con.setRequestProperty("Cookie", cookie);
+            }
+            if (body != null) {
+                con.setDoOutput(true);
+                DataOutputStream out = new DataOutputStream(con.getOutputStream());
+
+                out.writeBytes(body);
+                out.flush();
+                out.close();
+            }
+            reader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            StringBuilder out = new StringBuilder();
+            String line;
+            while ((line = reader.readLine()) != null) {
+                out.append(line);
+            }
+            String string = out.toString();
+            Timber.tag(TAG_RESPONSE).d(string);
+            return string;
+        } catch (Exception error) {
+            Timber.tag(TAG_ERROR).e(error);
+            throw error;
+        } finally {
+            if (reader != null) {
+                reader.close();
+            }
+        }
+    }
+
+
     public static JSONObject getJsonObject(@NonNull String url) throws IOException, JSONException {
         return new JSONObject(getRaw(url, null));
     }

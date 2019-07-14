@@ -105,10 +105,12 @@ public class MangaProviderManager {
             Method m = aClass.getMethod("getInstance", Context.class);
             return (MangaProvider) m.invoke(null, context);
         } catch (Exception ignored) {
+            Log.e("MangaProviderManager", "Cannot gesInstance from " + aClass.getSimpleName(), ignored);
         }
         try {
             return aClass.getDeclaredConstructor(Context.class).newInstance(context);
         } catch (Exception ignored) {
+            Log.e("MangaProviderManager", "Cannot construct " + aClass.getSimpleName(), ignored);
         }
         return null;
     }
